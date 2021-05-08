@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DisplayCard from "./components/DisplayCard";
 import Navbar from "./components/Navbar";
 import OptionsCard from "./components/OptionsCard";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
