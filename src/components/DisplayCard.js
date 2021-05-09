@@ -3,8 +3,9 @@ import lowerLetters from "../characters/lower";
 import upperLetters from "../characters/upper";
 import numberCharacters from "../characters/number";
 import specialCharacters from "../characters/special";
+import { Button } from 'react-bootstrap';
 
-export default function DisplayCard({ password, setPassword, showPass, setShowPass, options }) {
+export default function DisplayCard({ setPassword, setShowPass, options }) {
 
     const generatePassword = (e) => {
         e.preventDefault();
@@ -37,19 +38,18 @@ export default function DisplayCard({ password, setPassword, showPass, setShowPa
             passArray.push(loop);
         }
 
-        setPassword(passArray.join(""));
-        setShowPass(true);
+        if (passArray.length !== 0) {
+            console.log(passArray)
+            setPassword(passArray.join(""));
+            setShowPass(true);
+        } else {
+            setShowPass(true);
+        }
     }
 
     return (
-        <div>
-            {showPass === true && (
-                <p>Your Password: {password}</p>
-            )}
-            {showPass === false && (
-                <p>Click the button to generate a new password</p>
-            )}
-            <button onClick={(e) => generatePassword(e)}>Generate</button>
-        </div>
+        <Button onClick={(e) => generatePassword(e)} size="lg" variant="success">
+            Generate Password
+        </Button>
     )
 }
