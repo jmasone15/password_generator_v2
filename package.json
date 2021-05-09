@@ -19,7 +19,7 @@
   "homepage": "https://jmasone15.github.io/password_generator_v2",
   "scripts": {
     "predeploy": "npm run build",
-    "deplpoy": "gh-pages -d build",
+    "deplpoy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
